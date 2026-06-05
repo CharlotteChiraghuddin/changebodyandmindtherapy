@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Change Mind and Body Therapy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">
+          <img src="assets/images/logo-change-mind-and-body.png" alt="Change Mind and Body Therapy logo" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Change Mind and Body</span>
+          <span class="brand-subtitle">Therapy Service · Harlow & Online</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Sarah</a>
+        <a href="how-i-work.html">How I Work</a>
+        <a href="areas.html">Areas I Can Support With</a>
+        <a href="sessions-fees.html">Sessions &amp; Fees</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="blog.html">Reflections</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-soft">
+      <div class="container grid-two">
+        <div>
+          <div class="section-header">
+            <div class="section-kicker">Contact</div>
+            <h1 class="section-title">Get in touch</h1>
+            <p class="section-intro">
+              If you would like to arrange an initial session, ask any questions, or book a free 15-minute introductory
+              phone call, please feel free to contact me via email.
+            </p>
+          </div>
+          <p><strong>Email:</strong> <a href="mailto:cmbcsservice@gmail.com">cmbcsservice@gmail.com</a></p>
+          <p>
+            I aim to respond to all enquiries as soon as possible during working hours. If you do not receive a reply,
+            please check your spam or junk folder, as emails can sometimes be filtered there.
+          </p>
+          <p>
+            You are welcome to share as much or as little as you feel comfortable with in your initial message. You do
+            not need to have everything figured out before reaching out.
+          </p>
+        </div>
+        <div>
+          <div class="card-soft">
+            <h2>Send a message</h2>
+            <form id="contactForm" action="https://formspree.io/f/mzdqdblq" method="POST" class="form" onsubmit="handleSubmit(event)">
+
+              <div class="form-row">
+                <label for="name" class="label">Your Name</label>
+                <input type="text" id="name" name="name" class="input" required>
+              </div>
+
+              <div class="form-row">
+                <label for="email" class="label">Your Email</label>
+                <input type="email" id="email" name="email" class="input" required>
+              </div>
+
+              <div class="form-row">
+                <label for="message" class="label">Your Message</label>
+                <textarea id="message" name="message" class="textarea" required></textarea>
+              </div>
+
+              <input type="hidden" name="_replyto">
+
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <p style="margin-top: 0.8rem; font-size: 0.8rem; color: var(--text-soft);">
+              Please note: this form is for general enquiries only and is not an emergency service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Change Mind and Body Therapy Service</strong><br />
+        Harlow, Essex · Online and in-person therapy for adults<br />
+        <span class="footer-meta">Registered Member MBACP · BSc (Hons) Counselling</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="sessions-fees.html">Sessions &amp; Fees</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<div id="formSuccessOverlay" class="overlay hidden">
+  <div class="overlay-content">
+    <h3>Message sent successfully</h3>
+    <p>Thank you for getting in touch — I’ll reply as soon as I can.</p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
