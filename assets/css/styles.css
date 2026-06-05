@@ -675,6 +675,17 @@ main {
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(210, 199, 240, 0.9);
 }
+.therapy-quote {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(249, 247, 252, 0.6);
+  border-left: 4px solid var(--accent-lavender);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
 
 .badge-inline {
   display: inline-flex;
