@@ -619,6 +619,59 @@ main {
   margin-bottom: 0.9rem;
 }
 
+/* Reflection list */
+/* Container for all posts */
+#reflections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* space between posts */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Each post */
+#reflections-list .post {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Headings inside posts */
+#reflections-list .post h1,
+#reflections-list .post h2,
+#reflections-list .post h3 {
+  font-family: "Georgia", serif;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Paragraph spacing */
+#reflections-list .post p {
+  margin-bottom: 1.2rem;
+}
+
+/* Bullet lists */
+#reflections-list .post ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+#reflections-list .post li {
+  margin-bottom: 0.6rem;
+}
+
+/* Optional: subtle divider between posts */
+#reflections-list .post:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 3rem;
+}
+
+
 /* Footer */
 
 .site-footer {
