@@ -2,7 +2,7 @@ async function loadPosts() {
   const postsList = document.getElementById("reflections-list");
 
   // Fetch the list of posts from the GitHub API
-  const response = await fetch("https://api.github.com/repos/charlottetechiraghuddin/changebodyandmindtherapy/contents/posts");
+  const response = await fetch("https://github.com/CharlotteChiraghuddin/changebodyandmindtherapy/tree/main/posts");
   const files = await response.json();
 
   // Loop through each markdown file
