@@ -9,31 +9,44 @@ async function loadPosts() {
       const mdResponse = await fetch(file.download_url);
       const mdText = await mdResponse.text();
 
-      // Parse frontmatter
-      const parsed = matter(mdText);
+      // Extract title
+      const titleMatch = mdText.match(/title:\s*(.*)/);
+      const title = titleMatch ? titleMatch[1].trim() : "Untitled";
 
-      const title = parsed.data.title || "Untitled";
-      const date = parsed.data.date
-        ? new Date(parsed.data.date).toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-          })
-        : "";
+      // Extract date
+      const dateMatch = mdText.match(/date:\s*(.*)/);
+      let formattedDate = "";
 
-      const contentHTML = marked.parse(parsed.content);
+      if (dateMatch) {
+        const rawDate = new Date(dateMatch[1].trim());
+        formattedDate = rawDate.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+      }
 
-      // Build your custom HTML layout
+      // Remove frontmatter lines (title/date/---)
+      const cleaned = mdText
+        .replace(/---/g, "")
+        .replace(/title:.*\n?/g, "")
+        .replace(/date:.*\n?/g, "")
+        .trim(); // removes blank lines
+
+      // Convert markdown to HTML
+      const contentHTML = marked.parse(cleaned);
+
+      // Build final HTML
+      const html = `
+        <h2 class="post-title">${title}</h2>
+        <p class="post-date">${formattedDate}</p>
+        ${contentHTML}
+        <hr>
+      `;
+
       const postDiv = document.createElement("div");
       postDiv.classList.add("post");
-
-      postDiv.innerHTML = `
-        <div class="post-card">
-          <h2 class="post-title">${title}</h2>
-          <p class="post-date">${date}</p>
-          <div class="post-content">${contentHTML}</div>
-        </div>
-      `;
+      postDiv.innerHTML = html;
 
       postsList.appendChild(postDiv);
     }

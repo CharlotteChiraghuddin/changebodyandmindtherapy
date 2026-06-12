@@ -658,6 +658,35 @@ main {
   padding-bottom: 3rem;
 }
 
+.post {
+  position: relative;
+
+}
+
+.post:last-child {
+  border-bottom: none; /* no divider after last post */
+}
+
+.post-title {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.post-date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #7A7A7A; /* soft grey */
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.post-content {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
 
 /* Footer */
 
