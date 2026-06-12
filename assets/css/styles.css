@@ -627,18 +627,6 @@ main {
   gap: 3rem; /* space between posts */
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Each post */
-#reflections-list .post {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  line-height: 1.7;
-  font-size: 1.1rem;
-  color: #333;
 }
 
 /* Headings inside posts */
@@ -647,7 +635,6 @@ main {
 #reflections-list .post h3 {
   font-family: "Georgia", serif;
   margin-bottom: 1rem;
-  color: #444;
 }
 
 /* Paragraph spacing */
