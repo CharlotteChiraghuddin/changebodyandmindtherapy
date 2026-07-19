@@ -49,7 +49,7 @@ async function loadPosts() {
       postDiv.innerHTML = html;
 
       postsList.appendChild(postDiv);
-    }
+    } 
   }
 }
 
