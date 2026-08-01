@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  var map = L.map('map').setView([51.757889, 0.108947], 17);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19
+  }).addTo(map);
+
+  L.marker([51.757889, 0.108947]).addTo(map)
+    .bindPopup('Clear Cremations Room, Level 1<br>Latton Bush Centre<br>Southern Way<br>Harlow<br>CM18 7BL')
+    .openPopup();
+
   // Simple smooth scroll for same-page anchors
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -96,4 +106,5 @@ async function handleFeedbackSubmit(event) {
     alert("Network error. Please try again.");
   }
 }
+
 

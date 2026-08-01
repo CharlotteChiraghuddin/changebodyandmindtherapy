@@ -906,6 +906,14 @@ main {
   color: #fff;
 }
 
+#map{
+  z-index:0;
+}
+#directions{
+  text-decoration:none;
+  color:var(--accent-pink);
+}
+
 /* ------------------------------------------------------ */
 /* ⭐ RESPONSIVE LAYOUT — under 1300px                     */
 /* ------------------------------------------------------ */
