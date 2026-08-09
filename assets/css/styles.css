@@ -52,11 +52,7 @@ img {
 
 /* Hero images */
 .hero-main-image {
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
-  border-radius: 22px;
+  
 }
 
 /* Portraits */
@@ -346,11 +342,7 @@ main {
 }
 
 .hero-card img.hero-main-image {
-  width: 100%;
   border-radius: 22px;
-  display: block;
-  object-fit: cover;
-  max-height: 320px;
 }
 
 .hero-chip {
