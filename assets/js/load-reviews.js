@@ -1,19 +1,16 @@
 async function loadReviews() {
   const container = document.getElementById("reviewsList");
 
-  // Get list of review files
-  const response = await fetch("/reviews/");
-  const text = await response.text();
-
-  // Extract filenames from directory listing
-  const files = [...text.matchAll(/href="([^"]+\.md)"/g)].map(m => m[1]);
+  // Get list of review files from Netlify Function
+  const response = await fetch("/.netlify/functions/list-reviews");
+  const files = await response.json();
 
   for (const file of files) {
     const md = await fetch("/reviews/" + file).then(r => r.text());
     const parsed = matter(md);
 
-    const name = parsed.data.name;
-    const rating = parsed.data.rating;
+    const name = parsed.data.name || "Anonymous";
+    const rating = parsed.data.rating || 5;
     const date = new Date(parsed.data.date).toLocaleDateString();
     const body = parsed.content.trim();
 
