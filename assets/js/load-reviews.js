@@ -2,11 +2,11 @@ async function loadReviews() {
   const container = document.getElementById("reviewsList");
 
   // Get list of review files from Netlify Function
-  const response = await fetch("/.netlify/functions/list-reviews");
+ const response = await fetch("https://api.github.com/repos/CharlotteChiraghuddin/changebodyandmindtherapy/contents/reviews");
   const files = await response.json();
 
   for (const file of files) {
-    const md = await fetch("/reviews/" + file).then(r => r.text());
+    const md = await fetch(file.download_url).then(r => r.text());
     const parsed = matter(md);
 
     const name = parsed.data.name || "Anonymous";
