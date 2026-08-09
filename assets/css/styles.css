@@ -906,6 +906,26 @@ main {
   color:var(--accent-pink);
 }
 
+.review-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.review-item .stars {
+  font-size: 1.2rem;
+  color: #f5b301;
+}
+
+.review-item .date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+
 /* ------------------------------------------------------ */
 /* ⭐ RESPONSIVE LAYOUT — under 1300px                     */
 /* ------------------------------------------------------ */

@@ -1,37 +1,34 @@
-async function loadApprovedReviews() {
-  const container = document.getElementById("reviews-list");
+async function loadReviews() {
+  const container = document.getElementById("reviewsList");
 
-  try {
-    const response = await fetch("/.netlify/functions/get-reviews");
-    const reviews = await response.json();
+  // Get list of review files
+  const response = await fetch("/reviews/");
+  const text = await response.text();
 
-    if (!reviews.length) {
-      container.innerHTML = "<p class='lead'>No reviews have been approved yet.</p>";
-      return;
-    }
+  // Extract filenames from directory listing
+  const files = [...text.matchAll(/href="([^"]+\.md)"/g)].map(m => m[1]);
 
-    reviews.forEach(review => {
-      const item = document.createElement("div");
-      item.className = "card-soft review-item";
-      item.style.padding = "1.4rem";
+  for (const file of files) {
+    const md = await fetch("/reviews/" + file).then(r => r.text());
+    const parsed = matter(md);
 
-      item.innerHTML = `
-        <p class="review-message" style="margin: 0 0 0.8rem; font-size: 1.05rem; color: var(--text-main);">
-          “${review.message}”
-        </p>
+    const name = parsed.data.name;
+    const rating = parsed.data.rating;
+    const date = new Date(parsed.data.date).toLocaleDateString();
+    const body = parsed.content.trim();
 
-        <div class="review-rating" style="color: var(--accent-lavender); font-size: 1.2rem; margin-bottom: 0.4rem;">
-          ${"★".repeat(review.rating)}
-        </div>
+    const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
 
-        ${review.name ? `<p class="review-name" style="color: var(--text-soft); font-size: 0.9rem;">— ${review.name}</p>` : ""}
-      `;
-
-      container.appendChild(item);
-    });
-  } catch (err) {
-    container.innerHTML = "<p class='lead'>Unable to load reviews at this time.</p>";
+    const item = document.createElement("div");
+    item.className = "review-item";
+    item.innerHTML = `
+      <h3>${name}</h3>
+      <p class="stars">${stars}</p>
+      <p class="date">${date}</p>
+      <p>${body}</p>
+    `;
+    container.appendChild(item);
   }
 }
 
-loadApprovedReviews();
+loadReviews();
