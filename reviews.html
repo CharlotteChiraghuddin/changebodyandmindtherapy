@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reviews | Change Mind and Body Therapy</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+<div class="site-wrapper">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+        <div class="brand-logo">
+          <img src="assets/images/logo-change-mind-and-body.png" alt="Change Mind and Body Therapy logo" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">Change Mind and Body</span>
+          <span class="brand-subtitle">Therapy Service · Harlow & Online</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Sarah</a>
+        <a href="how-i-work.html">How I Work</a>
+        <a href="areas.html">Areas I Can Support With</a>
+        <a href="sessions-fees.html">Sessions &amp; Fees</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="urgent-support.html">Urgent Support</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- SUBMIT REVIEW FORM -->
+  <section class="section">
+    <div class="container narrow">
+      <h2 class="section-title">Leave a Review</h2>
+      <p class="lead">Your feedback helps others feel confident reaching out for support.</p>
+
+      <form name="reviews" method="POST" data-netlify="true" class="form" style="margin-top: 1.5rem;">
+        <input type="hidden" name="form-name" value="reviews">
+
+        <div class="form-row">
+          <label class="label">Your Name (optional)</label>
+          <input class="input" type="text" name="name" placeholder="You may leave this blank">
+        </div>
+
+        <div class="form-row">
+          <label class="label">Rating</label>
+          <select class="select" name="rating" required>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★</option>
+            <option value="3">★★★</option>
+            <option value="2">★★</option>
+            <option value="1">★</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="label">Your Review</label>
+          <textarea class="textarea" name="message" required placeholder="Write your review here..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Submit Review</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- APPROVED REVIEWS -->
+  <section class="section section-alt">
+    <div class="container narrow">
+      <h2 class="section-title">Reviews</h2>
+      <div id="reviews-list" class="reviews-list" style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem;"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        © Change Mind and Body Therapy — Harlow & Online
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="assets/js/load-reviews.js "></script>
+</body>
+</html>
