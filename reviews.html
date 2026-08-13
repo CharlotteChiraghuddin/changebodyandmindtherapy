@@ -16,7 +16,7 @@
 
       <a href="index.html" class="brand">
         <div class="brand-logo">
-          <img src="assets/images/logo-change-mind-and-body.png" alt="Change Mind and Body Therapy logo" />
+          <img src="/assets/images/logo-change-mind-and-body.png" alt="Change Mind and Body Therapy logo" />
         </div>
         <div class="brand-text">
           <span class="brand-title">Change Mind and Body</span>
@@ -43,46 +43,26 @@
     </div>
   </header>
 
-  <!-- SUBMIT REVIEW FORM -->
-  <section class="section">
-    <div class="container narrow">
-      <h2 class="section-title">Leave a Review</h2>
-      <p class="lead">Your feedback helps others feel confident reaching out for support.</p>
+  <!-- HERO / PAGE INTRO -->
+  <section class="section-soft" style="padding: 0rem 2rem;margin-bottom:0;">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Reviews</h1>
+            </div>
+        <p class="section-intro">
+          Read experiences from clients and explore feedback shared through Google Reviews.
+        </p>
 
-      <form name="reviews" method="POST" data-netlify="true" class="form" style="margin-top: 1.5rem;">
-        <input type="hidden" name="form-name" value="reviews">
-
-        <div class="form-row">
-          <label class="label">Your Name (optional)</label>
-          <input class="input" type="text" name="name" placeholder="You may leave this blank">
-        </div>
-
-        <div class="form-row">
-          <label class="label">Rating</label>
-          <select class="select" name="rating" required>
-            <option value="5">★★★★★</option>
-            <option value="4">★★★★</option>
-            <option value="3">★★★</option>
-            <option value="2">★★</option>
-            <option value="1">★</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <label class="label">Your Review</label>
-          <textarea class="textarea" name="message" required placeholder="Write your review here..."></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">Submit Review</button>
-      </form>
     </div>
   </section>
 
-  <!-- APPROVED REVIEWS -->
-  <section class="section section-alt">
+  <!-- GOOGLE REVIEWS WIDGET -->
+  <section class="section" style="padding: 0rem 2rem;margin-top:0;">
     <div class="container narrow">
-      <h2 class="section-title">Reviews</h2>
-      <div id="reviewsList" class="reviews-list" style="display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem;"></div>
+      <div class="card-soft" style="padding: 2rem; border-radius: 20px;">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-9eafd0f2-d1cd-4faa-be5c-46c9e3e460f6" data-elfsight-app-lazy></div>
+      </div>
     </div>
   </section>
 
@@ -101,7 +81,8 @@
   </footer>
 
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
-<script src="assets/js/load-reviews.js "></script>
+<script src="assets/js/load-reviews.js"></script>
 </body>
 </html>
