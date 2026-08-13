@@ -5,6 +5,43 @@
   <title>Reviews | Change Mind and Body Therapy</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    /* Make the page full height */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Flex layout so footer stays at bottom */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .site-wrapper {
+      flex: 1; /* pushes footer down */
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1; /* main content grows to fill space */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Optional: tidy spacing */
+    .section-soft {
+      padding: 2rem 2rem 1rem;
+    }
+
+    .section {
+      padding: 1rem 2rem 2rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,28 +80,32 @@
     </div>
   </header>
 
-  <!-- HERO / PAGE INTRO -->
-  <section class="section-soft" style="padding: 0rem 2rem;margin-bottom:0;">
-    <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Reviews</h1>
-            </div>
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO / PAGE INTRO -->
+    <section class="section-soft">
+      <div class="container">
+        <div class="section-header">
+          <h1 class="section-title">Reviews</h1>
+        </div>
         <p class="section-intro">
           Read experiences from clients and explore feedback shared through Google Reviews.
         </p>
-
-    </div>
-  </section>
-
-  <!-- GOOGLE REVIEWS WIDGET -->
-  <section class="section" style="padding: 0rem 2rem;margin-top:0;">
-    <div class="container narrow">
-      <div class="card-soft" style="padding: 2rem; border-radius: 20px;">
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-9eafd0f2-d1cd-4faa-be5c-46c9e3e460f6" data-elfsight-app-lazy></div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- GOOGLE REVIEWS WIDGET -->
+    <section class="section">
+      <div class="container narrow">
+        <div class="card-soft" style="padding: 2rem; border-radius: 20px;">
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-9eafd0f2-d1cd-4faa-be5c-46c9e3e460f6" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
